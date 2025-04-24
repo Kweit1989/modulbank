@@ -27,8 +27,18 @@ a{
     background: linear-gradient(to right, #A965ED, #FA71CD);
     border-radius: 10px;
     color: #fff;
+    height: 50px;
 }
-
+.btn-white {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 10px;
+    font-weight: 600;
+    background-color: rgb(111, 45, 194, 0.1);
+    color: #6F2DC2;
+}
 /* Header */
 nav {
     display: flex;
@@ -45,11 +55,7 @@ nav {
     align-items: center;
     column-gap: 8.3px;
 }
-.logo-text {
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 150%;
-}
+
 .menu {
     position: fixed;
     top: 60px;
@@ -165,6 +171,7 @@ nav {
 .header {
     background-color: #F9F4FF;
     padding: 30px 0;
+    margin-bottom: 50px;
 }
 .header-title, 
 .header-description {
@@ -183,7 +190,6 @@ nav {
 
 .header-btn {
     width: 100%;
-    height: 50px;
     margin-bottom: 20px;
 }
 .header-price {
@@ -201,8 +207,7 @@ nav {
     width: 290px;
 }
 
-
-
+/* Swiper */
 .header-swiper_link {
     display: flex;
     align-items: center;
@@ -217,4 +222,137 @@ nav {
     font-weight: 600;
     line-height: 150%;
     letter-spacing: -0.02em;
+}
+
+/* Section benefits */
+.benefits {
+    margin-bottom: 120px;
+}
+.benefits-row {
+    display: grid;
+    row-gap: 30px;
+}
+.benefits-item {
+    display: grid;
+    row-gap: 10px;
+    padding-left: 20px;
+    border-left: 1px solid rgb(0, 0, 0, 0.1);
+}
+.benefits-item_header {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 130%;
+}
+.benefits-item_description {
+    line-height: 150%;
+    letter-spacing: -0.02em;
+}
+
+/* Section tariffs*/
+.tariffs {
+    margin-bottom: 50px;
+}
+.tariffs_title {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.tariffs-row {
+    display: grid;
+    row-gap: 30px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+}
+.tariffs-card{
+    background: rgb(111, 45, 194, 0.1);
+    border-radius: 20px;
+    padding: 3px;
+}
+.tariffs-card.active{
+    background: linear-gradient(to right, #A965ED, #FA71CD);
+    border-radius: 20px;
+    padding: 3px;
+}
+.card-background {
+    display: grid;
+    row-gap: 15px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 17px;
+}
+.card-name{
+    font-weight: 600;
+}
+.card-price {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    background: linear-gradient(to right, #A965ED, #FA71CD); 
+    -webkit-background-clip: text; 
+    color: transparent; 
+}
+.card-benefits {
+    display: grid;
+    row-gap: 20px;
+}
+.card-benefits_item {
+    display: grid;
+    row-gap: 5px;
+}
+.card-benefits_description,
+.card-price_next{
+    font-size: 14px;
+    color: rgb(0, 0, 0, 0.5);
+}
+.card-price_next{
+    text-align: center;
+}
+
+/* Section form */
+.form {
+    margin-bottom: 30px;
+}
+.form-bg {
+    padding: 20px 20px 0 20px;
+    background-color: #F9F4FF;
+    border-radius: 20px;
+}
+.form-title {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 100%;
+    margin-bottom: 15px;
+}
+.form-description {
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+}
+.form-fields {
+    display: grid;
+    row-gap: 20px;
+    justify-items: center;
+}
+.form-number {
+    width: 100%;
+    padding: 13px 20px;
+    border-radius: 10px;
+}
+.form-number::placeholder{
+    color: rgb(0, 0, 0, 0.3);
+}
+.form-btn {
+    width: 100%;
+    margin-bottom: 10px
+}
+.form-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-img > img {
+    width: 290px;
 }
