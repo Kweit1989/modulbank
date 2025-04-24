@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    // Бургер меню 
     const menuBurger = document.querySelector('.menu-burger');
-
     menuBurger.addEventListener('click', function(){
         const menuIxon = document.querySelector('.menu-burger_icon');
         const menu = document.querySelector('.menu');
@@ -10,15 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
 
-
-
-
-
-
-
-
-
-
+    // Выподающие меню
     const menuArrows = document.querySelectorAll('.menu-arrow');
     menuArrows.forEach(arrow => {
       arrow.addEventListener('click', () => {
@@ -49,5 +41,27 @@ document.addEventListener("DOMContentLoaded", function () {
           }
       });
     });
-  });
+
+
+    //  Инициализация Swiper
+    const swiper = new Swiper('.header-markitplaces', {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        loop: true,
+        freeMode: true,
+        grabCursor: true,
+        breakpoints: {
+            320: {
+                slidesPerView: 1.5,
+            },
+            768: {
+                slidesPerView: 4,
+            },
+            1024: {
+                slidesPerView: 6,
+            }
+        }
+    });
+
+});
   
