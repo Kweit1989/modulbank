@@ -185,6 +185,9 @@ nav {
     margin-bottom: 20px;
 }
 .header-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 20px;
 }
 .header-img > img {
