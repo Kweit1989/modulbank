@@ -6,6 +6,12 @@
 body{
     font-family: 'Inter', sans-serif;
 }
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
 a{
     color: #fff;
 }
@@ -45,15 +51,16 @@ nav {
     line-height: 150%;
 }
 .menu {
-    position: absolute;
+    position: fixed;
     top: 60px;
     left: -100%;
-    z-index: 2;
     width: 100%;
-    min-height: 100vh;
+    height: calc(100vh - 60px);
     background-color: #6F2DC2;
+    overflow-y: auto;
     transition: left 0.3s ease-in;
 }
+
 .menu.active {
     left: 0%;
 }
