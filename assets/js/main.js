@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
         slidesPerView: 'auto',
         spaceBetween: 10,
         loop: true,
-        freeMode: true,
+
         grabCursor: true,
         breakpoints: {
             320: {
