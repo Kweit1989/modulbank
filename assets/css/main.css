@@ -99,7 +99,7 @@ nav {
 .menu-link {
     flex: 0 0 50%;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
     
 }
 .menu-arrow {
@@ -123,6 +123,9 @@ nav {
 }
 .menu_sub.open {
     margin-bottom: 15px;
+}
+.menu-login_text {
+    display: none;
 }
 .menu-item-padding {
     padding: 15px 10px;
@@ -163,10 +166,10 @@ nav {
     transition: transform 0.15s ease-in, top 0.15s ease-in 0.15s;
 }
 .menu-burger_icon::before {  
-    top: -4px;  
+    top: -6px;  
 }
 .menu-burger_icon::after {
-    top: 4px;
+    top: 6px;
 }
 .menu-burger_icon.active::before,
 .menu-burger_icon.active::after{
@@ -179,7 +182,6 @@ nav {
 .menu-burger_icon.active::after{
     transform: rotate(-45deg);
 }
-
 
 /* Section header */
 .header {
@@ -304,6 +306,7 @@ nav {
     display: grid;
     row-gap: 15px;
     padding: 17px;
+    height: 100%;
     background-color: #fff;
     border-radius: 17px;
 }
@@ -408,6 +411,13 @@ nav {
        font-size: 18px;
        height: 55px;
     }
+     /* Header */
+    nav { 
+        padding: 14px 30px;
+    }
+    .menu-icon {
+        column-gap: 25px;
+    }
     /* Section header */
     .header {
         padding-top: 60px;
@@ -510,4 +520,152 @@ nav {
     
 }
 
-
+@media screen and (min-width:1024px) {
+    /* Header */
+    .menu{
+        position: static;
+        display: flex;
+        justify-content: center;
+        height: auto;
+        overflow: visible;
+        column-gap: 16.5px;
+    }
+    .menu-item {
+        position: relative;
+        overflow: visible;
+    }
+    .menu_sub{
+        position: absolute;
+        top: 40px;
+        left: 15px;
+        row-gap: 0;
+        background-color: #6F2DC2;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        width: 130px;
+        border-bottom-right-radius: 10px;
+    }
+    .menu_sub-item {
+        text-align: center;
+        border-bottom: 1px solid #fff;  
+    }
+    .menu-link_arrow {
+        padding: 0;
+    }
+    .menu_sub-link {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        transition: background-color 0.3s ease-in;
+    }
+    .menu_sub-item:hover > .menu_sub-link {
+        background-color: lab(40.28% 62.49 -71.09);
+    }
+    .menu > .menu-item + .menu-item {
+        border: none;
+    }
+    .menu-link_arrow {
+        column-gap: 3px;
+    }
+    .menu-link,
+    .menu-arrow{
+        flex: 0 1 auto; 
+    }
+    .menu-arrow{
+        cursor: pointer;
+    }
+    .menu-link {
+        position: relative;
+    }
+    .menu-link::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        height: 1px;
+        width: 0%;
+        background-color: #fff;
+        transition: width 0.3s ease-in;
+    }
+    .menu-link:hover::before{
+        width: 100%;
+    }
+    .menu-item-padding {
+        padding: 0;
+    }
+    .menu-login {
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+        padding: 5.5px 10px;
+        border-radius: 8px;
+        background-color: #844CCB;
+        transition: background-color 0.3s ease-in;
+    }
+    .menu-login_text {
+        display: block;
+        font-size: 14px;
+    }
+    .menu-login:hover {
+        background-color: transparent;
+    }
+    .menu-phone_svg,
+    .menu-login_svg {
+        transition: scale 0.3s ease-in;
+    }
+    .menu-phone:hover > .menu-phone_svg,
+    .menu-login:hover > .menu-login_svg {
+        scale: 1.1;
+    }
+    .menu-burger {
+        display: none;
+    }
+    /* Swiper */
+    .header-swiper_item {
+        width: auto !important;
+    }
+    .header-swiper >  .header-swiper_item  +  .header-swiper_item {
+        margin-left: 50px;
+    }
+    /* Section header */
+    .header-row {
+        margin-bottom: 20px;
+    }
+    .header-content {
+        max-width: 467px;
+    }
+    .header-title {
+        font-size: 50px;
+    }
+    .header-btn {
+        max-width: 244px;
+    }
+    .header-price {
+        font-size: 16px;
+    }
+    .header-img {
+        margin-top: -40px;
+    }
+    .header-img > img {
+        width: 467px;
+        height: 469px;
+    }
+    /* Section benefits*/
+    .benefits {
+        margin-bottom: 180px;
+    }
+    .benefits-row {
+        grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    }
+    .benefits-item_description {
+        font-size: 20px;
+    }
+    /* Section tariffs*/
+    .tariffs_title {
+        font-size: 50px;
+    }
+    .tariffs-row {
+        grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    }
+}

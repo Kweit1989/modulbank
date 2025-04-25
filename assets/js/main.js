@@ -12,36 +12,52 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Выподающие меню
     const menuArrows = document.querySelectorAll('.menu-arrow');
+
     menuArrows.forEach(arrow => {
       arrow.addEventListener('click', () => {
         const menuItem = arrow.closest('.menu-item');
         const menuArrowSvg = menuItem.querySelector('.menu-arrow_svg');
         const submenu = menuItem.querySelector('.menu_sub');
-  
+    
         // Проверка: открыто ли меню
         const isOpen = submenu.classList.contains('open');
-  
-        if (isOpen) {
-            submenu.style.height = submenu.scrollHeight + 'px';
+    
+        // Закрытие всех подменю, кроме текущего
+        const allSubmenus = document.querySelectorAll('.menu_sub.open');
+        allSubmenus.forEach(openSubmenu => {
+          if (openSubmenu !== submenu) {
+            openSubmenu.style.height = openSubmenu.scrollHeight + 'px';
             requestAnimationFrame(() => {
-              submenu.style.height = '0px';
+              openSubmenu.style.height = '0px';
             });
-            submenu.classList.remove('open');
-            menuArrowSvg.classList.remove('rotated');
-        
-          } else {
-            submenu.style.height = submenu.scrollHeight + 'px';
-            submenu.classList.add('open');
-            menuArrowSvg.classList.add('rotated');
-            
-            submenu.addEventListener('transitionend', function handler() {
-              submenu.style.height = 'auto';
-              submenu.removeEventListener('transitionend', handler);
-            });
+            openSubmenu.classList.remove('open');
+            const openArrowSvg = openSubmenu.closest('.menu-item').querySelector('.menu-arrow_svg');
+            openArrowSvg.classList.remove('rotated');
           }
+        });
+    
+        // Если меню не открыто, открываем его
+        if (!isOpen) {
+          submenu.style.height = submenu.scrollHeight + 'px';
+          submenu.classList.add('open');
+          menuArrowSvg.classList.add('rotated');
+          
+          submenu.addEventListener('transitionend', function handler() {
+            submenu.style.height = 'auto';
+            submenu.removeEventListener('transitionend', handler);
+          });
+        } else {
+          // Если меню уже открыто, просто закрываем его
+          submenu.style.height = submenu.scrollHeight + 'px';
+          requestAnimationFrame(() => {
+            submenu.style.height = '0px';
+          });
+          submenu.classList.remove('open');
+          menuArrowSvg.classList.remove('rotated');
+        }
       });
     });
-
+    
 
     //  Инициализация Swiper
     const swiper = new Swiper('.header-markitplaces', {
