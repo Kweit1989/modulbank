@@ -48,20 +48,25 @@ document.addEventListener("DOMContentLoaded", function () {
         slidesPerView: 'auto',
         spaceBetween: 10,
         loop: true,
-
         grabCursor: true,
         breakpoints: {
             320: {
                 slidesPerView: 1.5,
             },
             768: {
-                slidesPerView: 4,
+                slidesPerView: 3.5,
             },
             1024: {
-                slidesPerView: 6,
+                slidesPerView: 4.5,
             }
         }
     });
+
+
+    // Инициализация маски телефона 
+    const phoneInput = document.querySelector('.form-number');
+    const im = new Inputmask('+7 (999) 999-99-99');
+    im.mask(phoneInput);
 
 });
   

@@ -15,6 +15,20 @@ header {
 a{
     color: #fff;
 }
+input {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 12px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(111, 45, 194, 0.4);
+    border-color: #A965ED;
+}
+
+
 .container {
     padding: 0 15px;
 }
@@ -170,17 +184,19 @@ nav {
 /* Section header */
 .header {
     background-color: #F9F4FF;
-    padding: 30px 0;
+    padding-top: 30px;
     margin-bottom: 50px;
 }
 .header-title, 
 .header-description {
     letter-spacing: -0.02em;
 }
+
 .header-title {
     font-size: 30px;
     font-weight: 700;
     margin-bottom: 15px;
+    line-height: 100%;
 }
 .header-description {
     font-size: 20px;
@@ -189,13 +205,14 @@ nav {
 }
 
 .header-btn {
-    width: 100%;
+    max-width: 290px;
     margin-bottom: 20px;
 }
 .header-price {
     font-size: 14px;
-    opacity: 50%;
+    color: rgb(0, 0, 0, 0.5);
     margin-bottom: 20px;
+    line-height: 150%;
 }
 .header-img {
     display: flex;
@@ -204,10 +221,18 @@ nav {
     margin-bottom: 20px;
 }
 .header-img > img {
-    width: 290px;
+    width: 320px;
 }
 
+
 /* Swiper */
+.header-markitplaces {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+.header-markitplaces.swiper {
+    padding: 30px 0;
+}
 .header-swiper_link {
     display: flex;
     align-items: center;
@@ -278,7 +303,7 @@ nav {
 .card-background {
     display: grid;
     row-gap: 15px;
-    padding: 20px;
+    padding: 17px;
     background-color: #fff;
     border-radius: 17px;
 }
@@ -304,6 +329,7 @@ nav {
 .card-benefits_description,
 .card-price_next{
     font-size: 14px;
+    line-height: 150%;
     color: rgb(0, 0, 0, 0.5);
 }
 .card-price_next{
@@ -315,9 +341,12 @@ nav {
     margin-bottom: 30px;
 }
 .form-bg {
-    padding: 20px 20px 0 20px;
     background-color: #F9F4FF;
     border-radius: 20px;
+    overflow: hidden;
+}
+.form-content {
+    padding: 20px 20px 33px 20px;
 }
 .form-title {
     font-size: 24px;
@@ -332,27 +361,153 @@ nav {
     margin-bottom: 20px;
 }
 .form-fields {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     row-gap: 20px;
-    justify-items: center;
 }
 .form-number {
     width: 100%;
-    padding: 13px 20px;
+    padding: 12px 20px;
     border-radius: 10px;
+    line-height: 150%;
 }
 .form-number::placeholder{
     color: rgb(0, 0, 0, 0.3);
 }
 .form-btn {
     width: 100%;
-    margin-bottom: 10px
 }
 .form-img {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.form-img > img {
-    width: 290px;
+.form-img {
+    position: relative;
+    width: 226px;
+    height: 177px;
+    margin: 0 auto;
+    overflow: hidden;
 }
+
+.form-img > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 226px;
+    height: 251px;
+}
+
+@media screen and (min-width:768px) {
+    .container {
+        padding: 0 30px;
+    }
+    .btn,
+    .btn-white {
+       font-size: 18px;
+       height: 55px;
+    }
+    /* Section header */
+    .header {
+        padding-top: 60px;
+    }
+    .header-content {
+        max-width: 339px;
+    }
+    .header-title {
+        font-size: 35px;
+        margin-bottom: 20px;
+    }
+    .header-description {
+        font-size: 22px;
+    }
+    .header-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+    .header-btn {
+        max-width: 218px;
+    }
+    .header-price {
+        margin-bottom: 0;
+    }
+    .header-img {
+        margin-bottom: 0;
+    }
+    .header-img > img {
+        width: 354px;
+        height: 360px;
+    }
+    /* Swiper */
+    .header-swiper_header {
+        font-size: 18px;
+    }
+   /* Section benefits */
+    .benefits-item_header {
+        font-size: 24px;
+    }
+    .benefits-item_description {
+        font-size: 18px;
+    }
+    /* Section tariffs*/
+    .tariffs_title {
+        font-size: 35px;
+    }
+    .card-background{
+        padding: 22px;
+        row-gap: 20px;
+    }
+    .card-name,
+    .card-benefits_header {
+        font-size: 18px;
+        line-height: 150%;
+    }
+    .card-price {
+        font-size: 30px;
+        height: 30px;
+    }
+    .card-price_next {
+        line-height: 115%;
+    }
+    /* Section form */
+    .form-bg {
+       display: flex;
+       column-gap: 25px;
+    }
+    .form-content {
+        padding: 25px;
+    }
+    .form-content {
+        max-width: 498px;
+        flex-shrink: 0;
+    }
+    .form-title {
+        font-size: 30px;
+        margin-bottom: 20px; 
+    }
+    .form-description {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .form-fields {
+        flex-direction: row;
+        column-gap: 20px;
+    }
+    .form-btn {
+        max-width: 198px;
+    }
+    .form-img {
+        margin: auto 0 0 auto;
+        width: 185px; 
+        height: 209px;
+    }
+    .form-img > img {
+        width: 258px; /* Исходная ширина изображения */
+        height: 287px; /* Исходная высота изображения */
+    }
+    
+}
+
+

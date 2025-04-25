@@ -6,7 +6,6 @@
 	border: none;
 	box-sizing: border-box;
 }
-
 /* Links */
 a, a:visited {
 	text-decoration: none;
@@ -52,3 +51,6 @@ input::-ms-clear {
 	display: none;
 }
 
+input:focus{
+	outline: none;
+  }
