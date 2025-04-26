@@ -12,7 +12,11 @@ header {
     left: 0;
     z-index: 2;
 }
-a{
+main {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+a{   
     color: #fff;
 }
 input {
@@ -466,6 +470,9 @@ nav {
     .benefits-item_header {
         font-size: 24px;
     }
+    .benefits-item {
+        padding-left: 30px;
+    }
     .benefits-item_description {
         font-size: 18px;
     }
@@ -714,6 +721,7 @@ nav {
     }
     .form-bg {
         column-gap: 0;
+        justify-content: space-between;
     }
     .form-content {
         max-width: 604px;
@@ -744,16 +752,52 @@ nav {
 }
 
 @media screen and (min-width:1440px) { 
+    .container {
+        padding: 0 120px;
+    }
     /* Header */
     .menu{
         column-gap: 40px;
     }
 
     /* Section header */
+    .header {
+        padding-top: 113px;
+    }
+    .header-row { 
+        margin-bottom: 12px;
+    }
     .header-content {
        max-width: 580px;
     }
     .header-title {
         font-size: 50px;
+        margin-bottom: 30px;
+    }
+    .header-description {
+        max-width: 400px;
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    .header-img {
+        margin-top: -115px;
+    }
+    .header-img > img { 
+        width: 535px;
+        height: 552px;
+    }
+    .header-swiper_header {
+        font-size: 20px;
+    }
+
+    /* Section benefits */
+
+    .benefits {
+        margin-bottom: 200px;
+    }
+
+    /* Section tariffs */
+    .card-content {
+        height: 520px;
     }
 }
