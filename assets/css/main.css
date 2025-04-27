@@ -41,21 +41,32 @@ input:focus {
     align-items: center;
     font-weight: 600;
     letter-spacing: -0.02em;
-    background: linear-gradient(to right, #A965ED, #FA71CD);
+    background: linear-gradient(120deg, #A965ED, #FA71CD, #A965ED);
+    background-size: 200% 100%;
+    background-position: left center;
     border-radius: 10px;
     color: #fff;
     height: 50px;
+    transition: background-position 0.3s ease-in;
+    cursor: pointer;
 }
-.btn-white {
+  
+  .btn-white {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 50px;
     border-radius: 10px;
     font-weight: 600;
-    background-color: rgb(111, 45, 194, 0.1);
+    background: linear-gradient(to left, rgba(111, 45, 194, 0.1) 50%, #A965ED 50%);
+    background-size: 200% 100%;
+    background-position: right center;
     color: #6F2DC2;
+    transition: background-position 0.5s ease, color 0.5s ease;
+    cursor: pointer;
 }
+
+  
 /* Header */
 nav {
     display: flex;
@@ -102,7 +113,7 @@ nav {
 .menu-link {
     flex: 0 0 50%;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     
 }
 .menu-arrow {
@@ -111,10 +122,13 @@ nav {
     justify-content: flex-end;
 }
 .menu-arrow_svg {
-    transition: transform 0.3s ease;
+    color: #fff;
+    fill-opacity: 0.3;
+    transition: fill-opacity 0.3s ease-in, transform 0.3s ease-in;
 }
-.menu-arrow_svg.rotated {
+.menu-arrow_svg.active {
     transform: rotate(180deg);
+    fill-opacity: 1;
   }
 .menu_sub {
     display: grid;
@@ -386,9 +400,12 @@ nav {
     padding: 12px 20px;
     border-radius: 10px;
     line-height: 150%;
+    transition: all 0.3s ease; /* Плавный переход для opacity */
 }
-.form-number::placeholder{
+
+.form-number::placeholder {
     color: rgb(0, 0, 0, 0.3);
+   
 }
 .form-btn {
     width: 100%;
@@ -417,6 +434,13 @@ nav {
 @media screen and (min-width:768px) {
     .container {
         padding: 0 30px;
+    }
+    .btn:hover {
+        background-position: right center; /* на ховере сдвигаем фон */
+    } 
+    .btn-white:hover {
+        background-position: left center;
+        color: #fff;
     }
     .btn,
     .btn-white {
@@ -538,11 +562,18 @@ nav {
 }
 
 @media screen and (min-width:1024px) {
-    .btn, .btn-white {
+    .btn, 
+    .btn-white {
         font-size: 20px;
         height: 60px;
     }
     /* Header */
+    .logo-img {
+        transition: scale 0.3s ease-in;
+    }
+    .logo:hover > .logo-img {
+        scale: 1.02;
+    }
     .menu{
         position: static;
         display: flex;
@@ -581,7 +612,7 @@ nav {
         transition: background-color 0.3s ease-in;
     }
     .menu_sub-item:hover > .menu_sub-link {
-        background-color: lab(40.28% 62.49 -71.09);
+        background-color: #A965ED;
     }
     .menu > .menu-item + .menu-item {
         border: none;
@@ -596,6 +627,10 @@ nav {
     .menu-arrow{
         cursor: pointer;
     }
+    .menu-arrow:hover > .menu-arrow_svg{
+        fill-opacity: 1;
+    }
+  
     .menu-link {
         position: relative;
     }
@@ -642,14 +677,6 @@ nav {
     .menu-burger {
         display: none;
     }
-    /* Swiper */
-
-    /* .header-swiper_item {
-        width: auto !important;
-    }
-    .header-swiper >  .header-swiper_item  +  .header-swiper_item {
-        margin-left: 50px;
-    } */
 
     /* Section header */
     .header-row {
@@ -735,6 +762,7 @@ nav {
     }
     .form-btn {
         max-width: 222px;
+        cursor: pointer;
     }
     .form-img {
         width: 360px;
