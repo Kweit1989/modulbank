@@ -405,7 +405,6 @@ nav {
 
 .form-number::placeholder {
     color: rgb(0, 0, 0, 0.3);
-   
 }
 .form-btn {
     width: 100%;
@@ -489,6 +488,12 @@ nav {
     /* Swiper */
     .header-swiper_header {
         font-size: 18px;
+    }
+    .header-swiper_img {
+        transition: scale 0.3s ease-in;
+    }
+    .header-swiper_link:hover > .header-swiper_img {
+        scale: 1.2;
     }
    /* Section benefits */
     .benefits-item_header {
